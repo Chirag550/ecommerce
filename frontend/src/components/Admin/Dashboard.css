@@ -1,0 +1,180 @@
+.Dashboard-page {
+  margin: 0;
+  padding: 0;
+}
+.Dashboard {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  width: 100vw;
+  min-width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+.dashboardcontainer {
+  border-left: 1px solid rgb(83, 82, 82);
+  background-color: white;
+  overflow-y: auto;
+}
+.sidebarcontainer {
+  background-color: rgb(251, 250, 255);
+  height: 100vh;
+  min-height: 100%;
+}
+.dashContainer > h1 {
+  text-align: center;
+  font: 300 2rem "Roboto";
+  width: 50%;
+  padding: 1.5rem;
+  margin: auto;
+  color: rgba(0, 0, 0, 0.733);
+}
+.dashboardsummary {
+  margin: 1rem 0;
+}
+.dashboardsummary > div {
+  display: flex;
+  background-color: white;
+  justify-content: center;
+}
+.dashboardsummary > div > p {
+  background-color: rgb(52, 52, 147);
+  color: white;
+  text-align: center;
+  font: 300 1.3rem "Roboto";
+  width: 100%;
+  padding: 1.5rem;
+  margin: 1rem 2rem;
+}
+.box2 > a {
+  color: rgb(0, 0, 0);
+  font: 300 2rem "Roboto";
+  text-align: center;
+  background-color: rgb(255, 233, 174);
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5vmax;
+  text-decoration: none;
+  padding: 1.5rem;
+  border-radius: 100%;
+  height: 10vmax;
+  width: 10vmax;
+}
+.box2 > a:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+.box2 > a:first-child {
+  background-color: rgb(255, 110, 110);
+  color: rgb(255, 255, 255);
+}
+.box2 > a:last-child {
+  background-color: rgb(13, 115, 210);
+  color: rgb(255, 255, 255);
+}
+.linechart {
+  width: 80%;
+  margin: auto;
+}
+.dougnutchart {
+  width: 30vmax;
+  margin: auto;
+}
+.MobileSidebarcontainer {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .dashboardcontainer {
+    margin-top: 0vmax;
+    border: none;
+  }
+  .dashContainer > h1 {
+    margin-top: 1vmax;
+    font: 400 5vmax "Roboto";
+  }
+
+  .dashboardsummary > div > p {
+    margin: 0;
+  }
+  .box2 > a {
+    padding: 0.5rem;
+    margin: 1rem;
+    font: 300 0.9rem "Roboto";
+  }
+  .logo {
+    font: 400 2vmax "Roboto";
+    text-align: center;
+  }
+  .sidebarcontainer {
+    /* height: 5vh;
+    max-height: 5vh; */
+    display: none;
+  }
+  .MobileSidebarcontainer {
+    background-color: rgb(39, 24, 21);
+
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    height: 8vh;
+  }
+  .SidebarCOntainer_Mobile {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 4vmax;
+  }
+  .Dashboard {
+    grid-template-columns: 1fr;
+  }
+  .MobileSidebar {
+    position: fixed;
+    animation: slide-in linear 500ms;
+  }
+  .mobile {
+    background-color: rgb(9, 5, 31);
+    height: 100vh;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100%;
+  }
+  .circle {
+    margin-left: 19vmax;
+    cursor: pointer;
+  }
+  .btn {
+    display: flex;
+
+    border: none;
+    background-color: rgb(39, 24, 21);
+    color: white;
+    font: 400 2vmax "Roboto";
+    width: 100%;
+    height: 100%;
+    padding: 2vmax 5vmax;
+    transition: all 0.5s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+  }
+  .btn:hover {
+    background-color: rgb(52, 50, 50);
+    transform: scale(1.1);
+  }
+  @keyframes slide-in {
+    0% {
+      -webkit-transform: translateX(-200px);
+      transform: translateX(-200px);
+    }
+    100% {
+      -webkit-transform: translateX(0px);
+      transform: translateX(0px);
+    }
+  }
+}
