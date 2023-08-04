@@ -4,9 +4,10 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const fileupload = require("express-fileupload");
 const dotenv = require("dotenv");
-const path = require("path");
+const cors = require("cors");
 
 const app = express();
+app.use(cors());
 dotenv.config({ path: "backend/config/config.env" });
 app.use(express.json());
 app.use(cookieParser());
