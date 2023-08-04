@@ -3,11 +3,9 @@ const errorMiddleWare = require("./middleware/error");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const fileupload = require("express-fileupload");
-const dotenv = require("dotenv");
-const cors = require("cors");
 
 const app = express();
-app.use(cors());
+
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config({ path: "backend/config/config.env" });
 }
