@@ -66,6 +66,8 @@ exports.getAdminProducts = catchAsynError(async (req, res, next) => {
 });
 
 exports.updateProduct = catchAsynError(async (req, res, next) => {
+  console.log("Updating start");
+
   let product = await Product.findById(req.params.productid);
 
   if (!product) {
@@ -76,7 +78,7 @@ exports.updateProduct = catchAsynError(async (req, res, next) => {
 
   let images = [];
 
-  if (typeof req.body.images !== "string") {
+  if (typeof req.body.images === "string") {
     images.push(req.body.images);
   } else {
     images = req.body.images;
@@ -99,13 +101,14 @@ exports.updateProduct = catchAsynError(async (req, res, next) => {
     }
     req.body.images = imagesLink;
   }
+
   product = await Product.findByIdAndUpdate(req.params.productid, req.body, {
     new: true,
     runValidators: true,
     usefindAndModify: false,
   });
 
-  res.status(200).json({ sucess: true, product });
+  res.status(200).json({ success: true, product });
 });
 
 exports.deleteProduct = catchAsynError(async (req, res, next) => {

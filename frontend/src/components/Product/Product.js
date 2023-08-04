@@ -29,7 +29,7 @@ const Product = () => {
   const [price, setPrice] = useState([0, 2500000]);
   const [category, setCategory] = useState("");
   const [ratings, setratings] = useState(0);
-  const Alert = useAlert();
+  const alert = useAlert();
   const {
     products,
     error,

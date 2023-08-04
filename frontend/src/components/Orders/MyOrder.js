@@ -9,12 +9,17 @@ import { useAlert } from "react-alert";
 import { MyOrders, clearErrors } from "../../REDUX/actions/OrderAction";
 import { Link } from "react-router-dom";
 import { MdLaunch } from "react-icons/md";
+import { useLocation } from "react-router-dom";
 
 const MyOrder = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
+  const routepath = useLocation();
   const { loading, error, orders } = useSelector((state) => state.myOrder);
   const { user } = useSelector((state) => state.user);
+  const onTop = () => {
+    window.scrollTo(0, 0);
+  };
   const columns = [
     { field: "id", headerName: "Order ID", minWidth: 300, flex: 1 },
     {
@@ -69,12 +74,13 @@ const MyOrder = () => {
       });
     });
   useEffect(() => {
+    onTop();
     if (error) {
       alert.error(error);
       dispatch(clearErrors);
     }
     dispatch(MyOrders());
-  }, [dispatch, error, alert]);
+  }, [dispatch, error, alert, routepath]);
   if (loading) return <Loader />;
   return (
     <>

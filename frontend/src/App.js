@@ -34,6 +34,7 @@ import OrderDetails from "./components/Orders/OrderDetails";
 import Dashboard from "./components/Admin/Dashboard";
 import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
+import NotFound from "./components/Layout/NotFound";
 
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -45,7 +46,7 @@ function App() {
 
     setStripeApiKey(data.StripeApiKey);
   }
-
+  window.addEventListener("contextmenu", (e) => e.preventDefault());
   useEffect(() => {
     WebFont.load({
       google: {
@@ -141,6 +142,7 @@ function App() {
         <Route exact path="/contact" Component={Contact}></Route>
         <Route exact path="/about" Component={About}></Route>
         {/* <Route exact path="/nav" element={<Navbar />}></Route> */}
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />
     </Router>

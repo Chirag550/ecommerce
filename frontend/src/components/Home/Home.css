@@ -1,5 +1,8 @@
 .banner {
-  background-image: linear-gradient(to right, #635dc0, #3027ae);
+  background-image: url("../../assets/cover.jfif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vmin;
   text-align: center;
   display: flex;
@@ -11,6 +14,7 @@
 
 .banner > h1 {
   margin: 5vmax;
+
   font: 600 2.5vmax "Roboto";
 }
 

@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const fileupload = require("express-fileupload");
 const dotenv = require("dotenv");
+const path = require("path");
 
 const app = express();
 dotenv.config({ path: "backend/config/config.env" });
@@ -20,6 +21,11 @@ app.use("/api/v1", productRoutes);
 app.use("/api/v1", userRoutes);
 app.use("/api/v1", orderRoutes);
 app.use("/api/v1", paymentRoutes);
+app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+});
 
 app.use(errorMiddleWare);
 

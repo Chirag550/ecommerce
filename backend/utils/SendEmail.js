@@ -5,13 +5,13 @@ const SendMail = async (options) => {
     service: "gmail",
     auth: {
       type: "OAuth2",
-      user: "chiragmunjal550@gmail.com",
-      pass: "903433Rs@",
+      user: "tcmonlineshop@gmail.com",
+      pass: "9034338894",
       clientId:
-        "238216196348-cmvrggrnrt0bvls34sl8mjibv8dd2r1t.apps.googleusercontent.com",
-      clientSecret: "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",
+        "399229361435-cu4ncdp9ojivdko66hnling67ajl4oir.apps.googleusercontent.com",
+      clientSecret: "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",
       refreshToken:
-        "1//04s-o7BKfLoZJCgYIARAAGAQSNwF-L9IrvXuab1LrjiGXjI3MaK1vYkQpbLzW4hyzOAWxwjiZn9d-GM1_c4hEtXYdSCH8I-f-mxY",
+        "1//04t9iZvP_4ArRCgYIARAAGAQSNwF-L9IrX0TPWwKVlwA4V3PPu0c3G7ZJzw8DED8QaWG_K1dnioFUFHToyPawCI0b4PNtC-Vq-5A",
     },
   });
 

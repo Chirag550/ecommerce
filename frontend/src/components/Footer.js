@@ -20,8 +20,12 @@ const Footer = () => {
       </div>
       <div className="rightFooter">
         <h4>Follow Us</h4>
-        <a href="http://instagram.com">Instagram</a>
-        <a href="http://instagram.com">Facebook</a>
+        <a href="https://instagram.com/_chirag_munjal_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D">
+          Instagram
+        </a>
+        <a href="https://instagram.com/_chirag_munjal_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D">
+          Facebook
+        </a>
       </div>
     </div>
   );

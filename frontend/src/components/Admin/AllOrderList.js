@@ -13,10 +13,12 @@ import { Typography } from "@material-ui/core";
 import { MdEdit } from "react-icons/md";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const AllOrderList = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
+  const routepath = useLocation();
   const navigate = useNavigate();
   const { orders, error, loading } = useSelector(
     (state) => state.AdminAllOrder
@@ -24,6 +26,11 @@ const AllOrderList = () => {
   const { isDeleted, error: deletedError } = useSelector(
     (state) => state.AdminOrder
   );
+  const ontop = () => {
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    };
+  };
 
   const columns = [
     { field: "id", headerName: "Order ID", minWidth: 300, flex: 1 },
@@ -108,8 +115,20 @@ const AllOrderList = () => {
       navigate("/admin/orders");
       dispatch({ type: DELETE_ORDER_RESET });
     }
+    if (!routepath.hash) {
+      ontop();
+    }
     dispatch(OrderAdmin());
-  }, [dispatch, loading, alert, error, isDeleted, deletedError]);
+  }, [
+    dispatch,
+    loading,
+    alert,
+    error,
+    isDeleted,
+    routepath,
+    deletedError,
+    navigate,
+  ]);
   return (
     <>
       <div className="dashContainer">

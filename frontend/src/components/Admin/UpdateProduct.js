@@ -15,6 +15,7 @@ import SpellcheckIcon from "@material-ui/icons/Spellcheck";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import { Button } from "@material-ui/core";
 import "./CreateProduct.css";
+import Loader from "../Layout/Loader/Loader";
 import MetaData from "../Layout/MetaData";
 import { UPDATE_PRODUCT_RESET } from "../../REDUX/constants/productConstants";
 
@@ -44,9 +45,11 @@ const UpdateProduct = () => {
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
   );
-  const { isUpdated, error: updatedError } = useSelector(
-    (state) => state.UpdateProduct
-  );
+  const {
+    loading: updateload,
+    isUpdated,
+    error: updatedError,
+  } = useSelector((state) => state.UpdateProduct);
   useEffect(() => {
     if (error) {
       alert.error(error);
@@ -112,6 +115,7 @@ const UpdateProduct = () => {
       reader.readAsDataURL(file);
     });
   };
+  if (loading || updateload) return <Loader />;
   return (
     <>
       <MetaData title="ADMIN- Update Product" />

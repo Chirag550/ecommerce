@@ -10,6 +10,7 @@ import SpellcheckIcon from "@material-ui/icons/Spellcheck";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import { Button } from "@material-ui/core";
 import MetaData from "../Layout/MetaData";
+import Loader from "../Layout/Loader/Loader";
 import { NEW_PRODUCT_RESET } from "../../REDUX/constants/productConstants";
 import { clearErrors } from "../../REDUX/actions/ProductAction";
 import { createProducts } from "../../REDUX/actions/ProductAction";
@@ -89,7 +90,7 @@ const CreateProduct = () => {
       reader.readAsDataURL(file);
     });
   };
-
+  if (loading) return <Loader />;
   return (
     <>
       <MetaData title="ADMIN- Create Product" />

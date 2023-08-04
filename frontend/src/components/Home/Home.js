@@ -12,9 +12,7 @@ import MetaData from "../Layout/MetaData";
 const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
-  const { loading, error, products, productCount } = useSelector(
-    (state) => state.products
-  );
+  const { loading, error, products } = useSelector((state) => state.products);
   useEffect(() => {
     if (error) {
       alert.error(error);
@@ -27,7 +25,7 @@ const Home = () => {
   if (loading) return <Loader />;
   return (
     <>
-      <MetaData title={"Ecommerce"} />
+      <MetaData title={"Online Shop"} />
       <div className="banner">
         <p>Welcome to Online Shop</p>
         <h1>FIND AMAZING PRODUCTS BELOW</h1>
