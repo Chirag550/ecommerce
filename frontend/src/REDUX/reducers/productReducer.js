@@ -33,12 +33,6 @@ import {
   UPDATE_PRODUCT_FAIL,
   UPDATE_PRODUCT_RESET,
 } from "../constants/productConstants";
-import {
-  UPDATE_PASSWORD_FAIL,
-  UPDATE_PASSWORD_REQUEST,
-  UPDATE_PASSWORD_RESET,
-  UPDATE_PASSWORD_SUCCESS,
-} from "../constants/userConstants";
 
 export const productReducer = (state = { products: [] }, action) => {
   switch (action.type) {

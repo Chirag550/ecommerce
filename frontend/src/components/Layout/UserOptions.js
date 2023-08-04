@@ -11,7 +11,6 @@ import "./useroptions.css";
 import { logout } from "../../REDUX/actions/userAction";
 import Backdrop from "@mui/material/Backdrop";
 import { MdShoppingCart } from "react-icons/md";
-import { withWidth } from "@material-ui/core";
 
 const UserOptions = ({ user }) => {
   const { cartitems } = useSelector((state) => state.cart);

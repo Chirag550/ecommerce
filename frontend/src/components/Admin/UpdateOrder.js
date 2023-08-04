@@ -15,7 +15,6 @@ import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import { Button } from "@material-ui/core";
 import { UPDATE_ORDER_RESET } from "../../REDUX/constants/orderConstant";
 import "./UpdateOrder.css";
-import { load } from "webfontloader";
 
 const UpdateOrder = () => {
   const { order, error, loading } = useSelector((state) => state.orderDetail);

@@ -1,19 +1,14 @@
 import React from "react";
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
-import { MdExpandMore } from "react-icons/md";
-import { MdPostAdd } from "react-icons/md";
-import { MdImportExport } from "react-icons/md";
+
 import { MdListAlt } from "react-icons/md";
 import { MdDashboard } from "react-icons/md";
 import { MdPeople } from "react-icons/md";
 import { MdRateReview } from "react-icons/md";
-import { MdAdd } from "react-icons/md";
-import TreeView from "@mui/lab/TreeView";
+
 import logo from "../../assets/logo (2).png";
-import TreeItem from "@mui/lab/TreeItem";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import ImportExportIcon from "@mui/icons-material/ImportExport";
+
 import PostAddIcon from "@mui/icons-material/PostAdd";
 import AddIcon from "@mui/icons-material/Add";
 

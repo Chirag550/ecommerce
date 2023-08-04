@@ -59,7 +59,17 @@ const Product = () => {
     }
     ontop();
     dispatch(getProduct(keyword, currentpage, price, category, ratings));
-  }, [dispatch, keyword, routepath, currentpage, price, category, ratings]);
+  }, [
+    dispatch,
+    keyword,
+    routepath,
+    currentpage,
+    price,
+    category,
+    ratings,
+    alert,
+    error,
+  ]);
   if (loading) return <Loader />;
   return (
     <>

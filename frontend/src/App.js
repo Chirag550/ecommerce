@@ -57,7 +57,7 @@ function App() {
     getStripeApiKey();
   }, []);
   return (
-    <Router>
+    <Router basename="/">
       <Header />
       {isAuthenticated && <UserOptions user={user} />}
       <Routes>

@@ -41,7 +41,16 @@ const ALLUsersList = () => {
       dispatch({ type: DELETE_USER_RESET });
     }
     dispatch(getAllUsers());
-  }, [dispatch, users, error, loading, isDeleted, deleteError]);
+  }, [
+    dispatch,
+    users,
+    error,
+    loading,
+    isDeleted,
+    deleteError,
+    alert,
+    navigate,
+  ]);
 
   const columns = [
     { field: "id", headerName: "User ID", minWidth: 180, flex: 0.8 },
@@ -105,6 +114,7 @@ const ALLUsersList = () => {
         name: item.name,
       });
     });
+  if (loading) return <Loader />;
   return (
     <>
       {" "}

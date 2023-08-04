@@ -75,7 +75,7 @@ const UpdateProduct = () => {
       dispatch({ type: UPDATE_PRODUCT_RESET });
       navigate("/admin/dashboard");
     }
-  }, [dispatch, product, id, error, loading, updatedError, isUpdated]);
+  }, [dispatch, product, id, error, loading, updatedError, isUpdated , alert , navigate]);
 
   const createProductSubmitHandler = (e) => {
     e.preventDefault();

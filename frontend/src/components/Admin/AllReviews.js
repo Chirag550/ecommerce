@@ -48,7 +48,7 @@ const AllReviews = () => {
       navigate("/admin/reviews");
       dispatch({ type: DELETE_REVIEW_RESET });
     }
-  }, [dispatch, alert, error, deleteError, isDeleted, productId]);
+  }, [dispatch, alert, error, deleteError, isDeleted, productId , navigate]);
   const deleteReviewHandler = (reviewId) => {
     dispatch(deleteReviews(reviewId, productId));
   };

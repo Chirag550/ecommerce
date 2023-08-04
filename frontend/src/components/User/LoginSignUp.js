@@ -51,7 +51,7 @@ const LoginSignUp = () => {
     if (isAuthenticated) {
       navigate(redirect);
     }
-  }, [error, dispatch, alert, isAuthenticated, navigate]);
+  }, [error, dispatch, alert, isAuthenticated, navigate, user, redirect]);
 
   const loginSubmit = (e) => {
     e.preventDefault();

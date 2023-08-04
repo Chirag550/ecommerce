@@ -7,6 +7,7 @@ import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./OrderDetails.css";
 import MetaData from "../Layout/MetaData";
+import Loader from "../Layout/Loader/Loader";
 const OrderDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -20,7 +21,8 @@ const OrderDetails = () => {
     }
 
     dispatch(OrderDetail(id));
-  }, []);
+  }, [alert, dispatch, error, id]);
+  if (loading) return <Loader />;
   return (
     <>
       <MetaData title="Order Details" />
