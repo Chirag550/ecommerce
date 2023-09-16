@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Loader from "../Layout/Loader/Loader";
+
 import "./AllProductList.css";
 import { useAlert } from "react-alert";
 import { DataGrid } from "@mui/x-data-grid";
@@ -20,7 +20,7 @@ import { DELETE_USER_RESET } from "../../REDUX/constants/userConstants";
 const ALLUsersList = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
-  const { loading, error, users } = useSelector((state) => state.allUsers);
+  const { error, users } = useSelector((state) => state.allUsers);
   const { error: deleteError, isDeleted } = useSelector(
     (state) => state.profile
   );
@@ -41,16 +41,7 @@ const ALLUsersList = () => {
       dispatch({ type: DELETE_USER_RESET });
     }
     dispatch(getAllUsers());
-  }, [
-    dispatch,
-    users,
-    error,
-    loading,
-    isDeleted,
-    deleteError,
-    alert,
-    navigate,
-  ]);
+  }, [dispatch, error, isDeleted, deleteError, alert]);
 
   const columns = [
     { field: "id", headerName: "User ID", minWidth: 180, flex: 0.8 },
@@ -114,7 +105,7 @@ const ALLUsersList = () => {
         name: item.name,
       });
     });
-  if (loading) return <Loader />;
+
   return (
     <>
       {" "}

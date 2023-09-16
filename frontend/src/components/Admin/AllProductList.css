@@ -72,4 +72,7 @@
     font: 300 3vmax "Roboto";
     color: rgb(129, 129, 129);
   }
+  .productListContainer {
+    padding: 0rem 0rem;
+  }
 }

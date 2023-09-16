@@ -1,9 +1,11 @@
 .newProductContainer {
-  width: 100%;
+  width: 100vw;
   box-sizing: border-box;
   background-color: rgb(221, 221, 221);
   border-left: 1px solid rgba(0, 0, 0, 0.158);
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   height: 100vh;
 }
@@ -20,8 +22,9 @@
   margin: auto;
   padding: 3vmax;
   justify-content: space-evenly;
-  height: 70%;
-  width: 20vw;
+  height: 80%;
+
+  width: 25vw;
   position: relative;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
@@ -30,6 +33,7 @@
 .createProductForm > div {
   display: flex;
   width: 100%;
+  margin: 0.4vmax 0vmax;
   align-items: center;
 }
 .createProductForm > div > input,
@@ -38,6 +42,7 @@
   padding: 1vmax 4vmax;
   padding-right: 1vmax;
   width: 100%;
+
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.267);
   border-radius: 4px;
@@ -77,11 +82,13 @@
 
 #createProductFormImage {
   width: 100%;
+
   overflow: auto;
 }
 
 #createProductFormImage > img {
   width: 3vmax;
+  height: 3vmax;
   margin: 0 0.5vmax;
 }
 #createProductBtn {
@@ -108,8 +115,7 @@
     height: 100vh;
   }
   .createProductForm {
-    padding: 5vmax;
-    width: 50vw;
+    width: 80%;
   }
 
   .createProductForm > div > input,
@@ -124,8 +130,9 @@
     font-size: 2.8vmax;
   }
 
-  #createProductFormFile > img {
+  #createProductFormImage > img {
     width: 8vmax;
+    height: 8vmax;
     border-radius: 100%;
   }
 
